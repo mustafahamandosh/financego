@@ -1,5 +1,17 @@
 import React from "react";
-import {Container, Header, Icon, ProfilePicture, User, UserGreeting, UserInfo, UserName, UserWrapper} from "./styles";
+import {
+    CardWrapper,
+    Container,
+    Header,
+    Icon,
+    ProfilePicture,
+    User,
+    UserGreeting,
+    UserInfo,
+    UserName,
+    UserWrapper
+} from "./styles";
+import {Card} from "../../components/Card";
 
 export const Dashboard = () => {
     return (
@@ -16,6 +28,11 @@ export const Dashboard = () => {
                     <Icon name='power'/>
                 </UserWrapper>
             </Header>
+            <CardWrapper>
+                <Card type='up' title='Income' amount='R$ 17.400,00' lastTransaction='Last transaction yesterday'/>
+                <Card type='down' title='Outcome' amount='R$ 1.400,00' lastTransaction='Last transaction today'/>
+                <Card type='total' title='Total' amount='R$ 10.000,00' lastTransaction='Last transaction yesterday'/>
+            </CardWrapper>
         </Container>
     )
 }
