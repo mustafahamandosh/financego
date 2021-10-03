@@ -54,7 +54,7 @@ export const Dashboard = () => {
             <Header>
                 <UserWrapper>
                     <UserInfo>
-                        <ProfilePicture source={{uri: 'https://github.com/mustafahamandosh.png'}}/>
+                        <ProfilePicture/>
                         <User>
                             <UserGreeting>Olá, </UserGreeting>
                             <UserName>Mustafa</UserName>

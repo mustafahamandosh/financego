@@ -31,7 +31,9 @@ export const UserInfo = styled.View`
   align-items: center;
 `
 
-export const ProfilePicture = styled.Image`
+export const ProfilePicture = styled.Image.attrs({
+    source: {uri: 'https://github.com/mustafahamandosh.png'}
+})`
   width: ${RFValue(48)}px;
   height: ${RFValue(48)}px;
   border-radius: 10px;
