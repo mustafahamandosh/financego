@@ -11,7 +11,7 @@ interface Category {
 }
 
 interface CategorySelectProps {
-    category: string;
+    category: Category;
     setCategory: (category: Category) => void;
     closeSelect: () => void;
 }
@@ -28,14 +28,21 @@ export const CategorySelect = ({category, setCategory, closeSelect}: CategorySel
                 keyExtractor={(item) => item.key}
                 ItemSeparatorComponent={() => <Separator/>}
                 renderItem={({item}) => (
-                    <Category>
+                    <Category
+                        onPress={() => setCategory(item)}
+                        isActive={category.key === item.key}
+                    >
                         <Icon name={item.icon}/>
                         <Name>{item.name}</Name>
                     </Category>
                 )}
             />
             <Footer>
-                <Button title='Select' activeOpacity={0.7}/>
+                <Button
+                    title='Select'
+                    activeOpacity={0.7}
+                    onPress={closeSelect}
+                />
             </Footer>
         </Container>
     )
