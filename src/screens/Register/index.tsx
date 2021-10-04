@@ -1,8 +1,10 @@
 import React, {useState} from "react";
-import {Container, Fields, Form, Header, Title, TransactionTypes} from "./style";
+import {Container, Form, Header, Title, TransactionTypes} from "./style";
 import {Input} from "../../components/Forms/Input";
 import {Button} from "../../components/Forms/Button";
 import {TransactionTypeButton} from "../../components/Forms/TransactionTypeButton";
+import {View} from "react-native";
+import {Select} from "../../components/Forms/Select";
 
 export const Register = () => {
     const [transactionType, setTransactionType] = useState<'up' | 'down'>()
@@ -18,22 +20,24 @@ export const Register = () => {
             </Header>
 
             <Form>
-                <Fields>
+                <View>
                     <Input placeholder='Name'/>
                     <Input placeholder='Price'/>
                     <TransactionTypes>
-                        <TransactionTypeButton type='up'
-                                               title='Income'
-                                               onPress={() => handleTransactionTypeSelect('up')}
-                                               isActive={transactionType === 'up'}
+                        <TransactionTypeButton
+                            type='up'
+                            title='Income'
+                            onPress={() => handleTransactionTypeSelect('up')}
+                            isActive={transactionType === 'up'}
                         />
-                        <TransactionTypeButton type='down'
-                                               title='Outcome'
-                                               onPress={() => handleTransactionTypeSelect('down')}
-                                               isActive={transactionType === 'down'}
+                        <TransactionTypeButton
+                            type='down' title='Outcome'
+                            onPress={() => handleTransactionTypeSelect('down')}
+                            isActive={transactionType === 'down'}
                         />
                     </TransactionTypes>
-                </Fields>
+                    <Select title='Categories'/>
+                </View>
                 <Button title='Send'/>
             </Form>
         </Container>
