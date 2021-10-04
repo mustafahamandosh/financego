@@ -1,8 +1,7 @@
 import React from "react";
 import {Container, Icon, Title} from "./styles";
-import {TouchableOpacityProps} from "react-native";
 
-interface SelectProps{
+interface SelectProps {
     title: string;
     onPress: () => void
 }
