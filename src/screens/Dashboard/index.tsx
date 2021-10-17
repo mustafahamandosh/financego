@@ -12,7 +12,8 @@ import {
     UserGreeting,
     UserInfo,
     UserName,
-    UserWrapper
+    UserWrapper,
+    LogoutButton
 } from "./styles";
 import {Card} from "../../components/Card";
 import {TransactionCard, TransactionCardPropsData} from "../../components/TransactionCard";
@@ -60,7 +61,9 @@ export const Dashboard = () => {
                             <UserName>Mustafa</UserName>
                         </User>
                     </UserInfo>
-                    <Icon name='power'/>
+                    <LogoutButton onPress={() => {}}>
+                        <Icon name='power'/>
+                    </LogoutButton>
                 </UserWrapper>
             </Header>
             <CardWrapper>
